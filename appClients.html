@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB-Production</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+ 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 	<script type="text/javascript" src="./js/order.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">BB Production</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href=""><i class="fa fa-home">&nbsp;</i>Home <span class="sr-only">(current)</span></a>
+            </li>  
+             
+                  <li class="nav-item active">
+                    <a class="nav-link" href=""><i class="fa fa-sign-out">&nbsp;</i>Logout</a>
+                  </li>
+                
+          </ul>
+        </div>
+      </nav>
+    
+    <div class="overlay"><div class="loader"></div></div>
+	<br/><br/>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 mx-auto">
+				<div class="card" style="box-shadow:0 0 25px 0 lightgrey;">
+				  <div class="card-header">
+				   	<h4>Production Page</h4><i class="fa fa-cogs fa-4x" aria-hidden="true"></i>
+				  </div>
+				  <div class="card-body">
+				  	<form id="get_order_data" onsubmit="return false">
+				  		<div class="form-group row">
+				  			<label class="col-sm-3 col-form-label" align="right">Produce Date</label>
+				  			<div class="col-sm-6">
+	<input type="text" id="order_date" name="order_date" readonly class="form-control form-control-sm" value="">
+				  			</div>
+				  		</div>
+
+				  		<div class="form-group row">
+				  			<label class="col-sm-3 col-form-label" align="right">Produce By</label>
+				  			<div class="col-sm-6">
+	<input type="text" id="order_date" name="order_date" readonly class="form-control form-control-sm" value="">
+				  			</div>
+				  		</div>
+
+				  	<p></p>
+
+                      <div class="form-group row">
+                        <label for="payment_type" class="col-sm-3 col-form-label" align="right">Request Type</label>
+                        <div class="col-sm-6">
+                          <select name="payment_type" class="form-control form-control-sm" id="payment_type" required/>
+                            <option>Client Order</option>
+                            <option>Shop Request</option>
+                          </select>
+                        </div>
+                      </div>
+
+                    <div class="form-group row">
+                      <label for="discount" class="col-sm-3 col-form-label" align="right">Quantity</label>
+                      <div class="col-sm-6">
+                        <input type="text" name="discount" class="form-control form-control-sm" id="discount" required/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="payment_type" class="col-sm-3 col-form-label" align="right">Sheets Type</label>
+                        <div class="col-sm-6">
+                          <select name="payment_type" class="form-control form-control-sm" id="payment_type" required/>
+                            <option>IBR</option>
+                            <option>Self Lock</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="payment_type" class="col-sm-3 col-form-label" align="right">Sheets Thickness</label>
+                        <div class="col-sm-6">
+                          <select name="payment_type" class="form-control form-control-sm" id="payment_type" required/>
+                            <option>0.35</option>
+                            <option>0.32</option>
+                            <option>0.25</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="discount" class="col-sm-3 col-form-label" align="right">Customer Name</label>
+                        <div class="col-sm-6">
+                          <input type="text" name="discount" placeholder="john paul" class="form-control form-control-sm" id="discount" required/>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="discount" class="col-sm-3 col-form-label" align="right">Customer Number</label>
+                        <div class="col-sm-6">
+                          <input type="text" name="discount" placeholder="024-000-000-0" class="form-control form-control-sm" id="discount" required/>
+                        </div>
+                      </div>  
+
+                    <div class="form-group row">
+                      <label for="payment_type" class="col-sm-3 col-form-label" align="right">Payment Method</label>
+                      <div class="col-sm-6">
+                        <select name="payment_type" class="form-control form-control-sm" id="payment_type" required/>
+                          <option>Cash</option>
+                          <option>Mobile Money</option>
+                          <option>Cheque</option>
+                        </select>
+                      </div>
+                    </div>
+                     
+                    <center>
+                        <input type="submit" id="order_form" style="width:150px;" class="btn btn-info" value="Order">
+                    </center>
+
+				  	</form>
+
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

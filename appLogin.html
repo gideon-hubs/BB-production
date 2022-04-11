@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"  />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>BB Production</title>
+    <style>
+        body{height: 100%; margin: 0; 
+            padding: 0;
+            font-weight: 400; 
+               font-family: Poppins; 
+               overflow-x: hidden;}
+
+*{box-sizing: border-box;}
+
+img{max-width: 100%}
+
+.logo{text-align: center; 
+    max-width: 300px; 
+    margin: auto; }
+
+.dflex{display: flex; height: 100vh;
+     align-items: center; 
+    flex-direction: row;
+     justify-content:space-between;}
+
+.dLeft{padding: 2rem;   
+    background: #fff; 
+    width:450px;   
+     margin: auto; }
+
+
+.dRight{background-color: #ccc; height:100vh;background-image:
+  linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0,0,0, 0.82)), 
+  url(img/people.png); 
+  background-size: cover; 
+  width:60%; 
+  float:right;
+  display: flex;  
+  align-items: center;  
+  padding: 40px;}
+  
+.loginForm{padding: 20px 0;}
+
+.loginForm {text-align: center; 
+    font-size: 1.5rem; 
+    color: #000; 
+    font-weight: 500; 
+    margin-bottom: 50px;}
+
+    .loginTitle{text-align: left;}
+
+.loginForm .field-group{margin-bottom: 15px;}
+
+input[type="text"],input[type="password"]{height: 46px;
+    border-radius: 0;
+    border: 0; 
+    border-bottom: 1px solid rgba(235,237,242,.8); 
+    padding: 1rem 0;
+    color: #6c7293; 
+    width:100%; 
+    margin-bottom: 5px;	
+    font-family: 'Poppins', sans-serif;
+}
+input:focus{outline:none;}
+
+.loginExtra{margin-top: 26px;    
+    display:flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; 
+  font-size:14px; 
+  font-weight: 500 }
+
+a{color:#6c7293; text-decoration: none; transition: all ease-in-out 0.5s;}
+
+a:hover{color:#000;}
+
+.loginAction{margin-top:35px; text-align: center;}
+
+.btn-default{ font-family: 'Poppins', sans-serif;  
+background-color: #ffffff; 
+border:1px solid #000000; 
+color: rgb(0, 0, 0); 
+height: 46px;padding-left: 25px;    
+padding-right:25px; 
+font-weight: 500; 
+border-radius: 30px; 
+cursor: pointer; 
+transition: all ease-in-out 0.5s;}
+
+.btn-default:hover{background-color: rgb(255, 255, 255); border-color: #000}
+
+h3{color:#fff; font-size: 42px; margin:0 0 15px; }
+
+.companyDesc{color:#fff; display: block}
+.wow{visibility: hidden;}
+
+@media only screen and (max-width: 800px){
+  .dflex{flex-direction: column;}
+  .dRight{width:100%; text-align: center}
+}
+@media only screen and (max-width: 479px){
+  .dLeft{width: 100% ;  padding: 30px 15px;}
+  h3{font-size: 20px;}
+  .dRight{padding: 40px 15px;}
+}
+    </style>
+</head>
+<body>
+    <div class="dflex">
+		<div class="dLeft">
+			<div class="logo wow fadeInDown"><img src="#" alt="Logo" /></div>
+			<div class="loginForm">
+				<div class="loginTitle wow fadeInUp"><div id="greeting"></div></div><br><br>
+				<div class="field-group wow fadeInUp">
+					<input type="text" name="identity" value="" id="identity" placeholder="Username" class="form-control" required>
+				</div>
+				<div class="field-group wow fadeInUp">
+					<input type="password" name="password" value="" id="password" placeholder="Password" class="form-control" required>
+				</div>
+				<div class="loginExtra wow fadeInUp">
+					<label class="kt-checkbox">
+						<a href="javascript:;" id="login-forgot">Create an account</a>
+						<span></span>
+					</label>
+					<a href="javascript:;" id="login-forgot">Forget Password ?</a>
+				</div>
+				<div class="loginAction wow flipInX">
+					<input type="submit" name="submit" id="" class="btn-default">
+				</div>
+
+			</div>
+		</div>
+		<div class="dRight">
+			<div>
+				<h3 class="companyName wow fadeInUp">BB - Production</h3>
+				<div class="companyDesc wow fadeInDown" data-wow-delay="0.2s">
+					Manufacturing Company
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" type="text/javascript"></script>
+	<script type="text/javascript">new WOW().init();</script>
+    <script>
+        const greeting = document.getElementById("greeting");
+        const hour = new Date().getHours();
+        const welcomeTypes = ["Good Morning &#128512; akwaaba!", "Good Afternoon &#128512; akwaaba!", "Good Evening &#128512; akwaaba!"];
+        let welcomeText = "";
+
+        if (hour < 12) welcomeText = welcomeTypes[0];
+        else if (hour < 18) welcomeText = welcomeTypes[1];
+        else welcomeText = welcomeTypes[2];
+        greeting.innerHTML = welcomeText;
+    </script>
+</body>
+</html>

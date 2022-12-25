@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>BB-Production</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+	        var maxField = 30;
+	        var addButton = $('.add_button'); 
+	        var wrapper = $('.field_wrapper');
+	        var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button"><img src="img/delete.png"/></a></div>';
+	        var x = 1; 
+
+	        
+	        $(addButton).click(function(){
+		        
+		        if(x < maxField){
+			        x++; 
+			        $(wrapper).append(fieldHTML); 
+		        }
+	        }); 
+
+	        //Once remove button is clicked
+	        $(wrapper).on('click', '.remove_button', function(e){
+		        e.preventDefault();
+		        $(this).parent('div').remove(); //Remove field html
+		        x--; //Decrement field counter
+	        });
+        });
+    </script>
+    <style type="text/css">
+        input[type="text"] {
+            height: 20px;
+            vertical-align: top;
+        }
+
+        .field_wrapper div {
+            margin-bottom: 10px;
+        }
+
+        .add_button {
+            margin-top: 10px;
+            margin-left: 10px;
+            vertical-align: text-bottom;
+        }
+
+        .remove_button {
+            margin-top: 10px;
+            margin-left: 10px;
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+<body>
+    <h2>Update the request</h2>
+    <div class="container">
+        <form action="" method="post">
+            <div class="field_wrapper">
+                <div>
+                    <input type="text" placeholder="Enter your sheet type:" name="field_name[]" value="" />
+                    <a href="javascript:void(0);" class="add_button" title="Add field"><img src="img/edit.png" style="font-size: smaller;"/></a>
+                </div>
+            </div>
+            <input type="submit" name="submit" value="SUBMIT" />
+        </form>
+    </div>
+</body>
+</html>

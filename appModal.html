@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB-Production</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .form-group{
+            font-family: 'Poppins', Courier, monospace;
+        }
+
+        .modal-footer{
+            font-family: 'Poppins', Courier, monospace;
+        }
+
+        .btn .btn-primary .btn-lg{
+            font-family: 'Poppins', Courier, monospace;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Request</button>
+      
+        
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">BB-Production</h4>
+              </div>
+              
+              <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                      <label for="usr">Customer Name</label>
+                      <input type="text" class="form-control input-lg" id="usr">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Customer Number</label>
+                      <input type="password" class="form-control input-lg" id="pwd">
+                    </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Submit Request</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    
+</body>
+</html>
